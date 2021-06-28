@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import Header from "./component/header/Header";
+import NewItem from "./component/newItem/NewItem";
+import Content from "./component/content/Content";
+import { useState } from "react";
 
-function App() {
+const AppContainer = styled.div`
+  background: #ffffc7;
+  height:inherit;
+  width:inherit;
+`;
+
+const App = () => {
+  const [newItemCreated, setNewItemCreated] = useState(false);
+  const handleContentLoading = (value) => {
+    setNewItemCreated(value);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <Header />
+      <NewItem handleLoading={handleContentLoading} />
+      <Content
+        newItemCreated={newItemCreated}
+        handleLoading={handleContentLoading}
+      />
+    </AppContainer>
   );
-}
+};
 
 export default App;
