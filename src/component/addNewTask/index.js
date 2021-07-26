@@ -1,9 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import styled from "styled-components";
 import Input from "../input";
 import IconButton from "../IconButton";
 import AddIcon from "../../assets/addIcon";
-import { isEmptyString } from "../../utils";
 
 const Container = styled.div`
   margin: 1.5rem auto;
@@ -15,19 +14,9 @@ const Container = styled.div`
   align-items: center;
 `;
 
-// const Input = styled.input.attrs((props) => ({
-//   id: 'input-text',
-//   type: 'text',
-//   placeholder: 'Add New Task',
-// }))`
-//   color: #757070;
-//   font-size: 1rem;
-//   padding: 0.5rem;
-// `;
-
 const AddNewTask = props => {
   const [taskName, setTaskName] = useState("");
-  const { toDoList, handleAddNewTask } = props;
+  const { handleAddNewTask } = props;
 
  
   const handleInputTextChange = useCallback((e) => {

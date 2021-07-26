@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import IconButton from "../IconButton";
 import DeleteIcon from '../../assets/deleteIcon';
-import { useCallback } from "react";
 
 const Container = styled.div`
     display: flex;

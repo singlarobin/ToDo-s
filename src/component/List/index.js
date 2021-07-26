@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import styled from "styled-components";
 import { isEmptyString } from "../../utils";
 import Item from "../Item";
