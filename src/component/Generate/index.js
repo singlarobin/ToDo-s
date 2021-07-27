@@ -23,17 +23,27 @@ const Generate = () => {
         localStorage.setItem('ToDoList', JSON.stringify(toDoList));
     }, [toDoList]);
 
-    const handleAddNewTask = useCallback(item => setToDoList(!isEmptyString(toDoList)?[...toDoList, item]: [item]), [toDoList]);
-    const handleDeleteTask = useCallback(index=> {
-        const currList = toDoList.filter(item => item!== toDoList[index]);
+    const handleAddNewTask = useCallback(item => setToDoList(!isEmptyString(toDoList) ? [...toDoList, item] : [item]), [toDoList]);
+    const handleDeleteTask = useCallback(index => {
+        const currList = toDoList.filter(item => item !== toDoList[index]);
+        setToDoList(currList);
+    }, [toDoList]);
+
+    const handleEditTask = useCallback((index, taskName) => {
+        const currList = toDoList.map((item, currIndex) => {
+            if (currIndex === index) {
+                item.name = taskName;
+            }
+            return item;
+        });
         setToDoList(currList);
     }, [toDoList]);
 
     console.log('generate:', toDoList);
     return <Div>
         <AddNewTask handleAddNewTask={handleAddNewTask} />
-        <List toDoList={toDoList} handleDeleteTask={handleDeleteTask} />
-    </Div>
+        <List toDoList={toDoList} handleEditTask={handleEditTask} handleDeleteTask={handleDeleteTask} />
+    </Div>;
 
 };
 

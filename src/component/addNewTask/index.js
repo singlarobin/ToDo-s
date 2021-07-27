@@ -20,16 +20,12 @@ const AddNewTask = React.memo(props => {
   const { handleAddNewTask } = props;
 
  
-  const handleInputTextChange = useCallback((e) => {
-    console.log(e.target.value);
-    setTaskName(e.target.value);
-  }, []);
+  const handleInputTextChange = useCallback((e) => setTaskName(e.target.value), []);
 
   const handleAddButton = useCallback(() => {
-    const currList = { name: taskName, completed: false };
-    // setTimeout(() => setTaskName(''),0);
+    const currTask = { name: taskName, completed: false };
     setTaskName('');
-    handleAddNewTask(currList);
+    handleAddNewTask(currTask);
   }, [taskName, handleAddNewTask]);
 
   return <Container>

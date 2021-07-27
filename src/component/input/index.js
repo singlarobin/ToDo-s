@@ -6,7 +6,8 @@ const StyledTextArea = styled.textarea`
     padding: 0.5rem;
     resize: none;
     border: none;
-
+    outline:none;
+    
     ::placeholder {
         opacity: 0.75;
     }
