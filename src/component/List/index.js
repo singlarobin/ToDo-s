@@ -15,15 +15,15 @@ const EmptyDiv = styled.div`
 `;
 
 const List = React.memo(props => {
-    const { toDoList, handleDeleteTask } = props;
+    const { toDoList, handleEditTask, handleDeleteTask } = props;
 
-    const handleDeleteItem = useCallback(index => {
-        handleDeleteTask(index);
-    }, [handleDeleteTask]);
-    console.log(isEmptyString(toDoList));
+    const handleEditItem = useCallback((index, taskName) => handleEditTask(index, taskName), [handleEditTask]);
+    const handleDeleteItem = useCallback(index => handleDeleteTask(index), [handleDeleteTask]);
+
     return <Div>
         {!isEmptyString(toDoList) && toDoList.length !== 0 ? (toDoList.map((item, index) => {
-            return <Item key={index} index={index} toDoItem={item} handleDeleteItem={handleDeleteItem} />
+            return <Item key={index} index={index} toDoItem={item}
+                handleEditItem={handleEditItem} handleDeleteItem={handleDeleteItem} />
         })) : <EmptyDiv>No Task!</EmptyDiv>}
     </Div>
 });
