@@ -13,7 +13,17 @@ const Container = styled.div`
     background-color: #fff;
 `;
 
-const Div = styled.div`
+const InputContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+`;
+
+const Label = styled.div`
+    font-size: 0.7rem;
+`;
+
+const ItemNameDiv = styled.div`
     font-size: 1rem;
     flex-grow: 1;
 `;
@@ -36,13 +46,17 @@ const Item = React.memo(props => {
 
     return <Container>
         {isEdit ? <Fragment>
-            <Input placeholderValue={'Task Name'} rows={1} inputText={taskName}
-                handleChange={handleInputTextChange} style={{ flexGrow: '1', padding: '0rem' }} />
+            <InputContainer>
+                <Label>{'Edit Name'}</Label>
+                <Input placeholderValue={'Task Name'} rows={1} inputText={taskName}
+                    handleChange={handleInputTextChange} style={{ flexGrow: '1', padding: '0rem' }} />
+            </InputContainer>
+
             <IconButton onClick={handleDoneButtonClick}>
                 <DoneIcon />
             </IconButton>
         </Fragment> : <Fragment>
-            <Div>{name}</Div>
+            <ItemNameDiv>{name}</ItemNameDiv>
             <IconButton onClick={handleEditButtonClick}>
                 <EditIcon />
             </IconButton>
