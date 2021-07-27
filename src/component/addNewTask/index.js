@@ -1,8 +1,9 @@
-import { useCallback, useState } from "react";
-import styled from "styled-components";
-import Input from "../input";
-import IconButton from "../IconButton";
-import AddIcon from "../../assets/addIcon";
+import { useCallback, useState} from 'react';
+import React from 'react';
+import styled from 'styled-components';
+import Input from '../input';
+import IconButton from '../IconButton';
+import AddIcon from '../../assets/addIcon';
 
 const Container = styled.div`
   margin: 1.5rem auto;
@@ -14,8 +15,8 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const AddNewTask = props => {
-  const [taskName, setTaskName] = useState("");
+const AddNewTask = React.memo(props => {
+  const [taskName, setTaskName] = useState('');
   const { handleAddNewTask } = props;
 
  
@@ -26,9 +27,9 @@ const AddNewTask = props => {
 
   const handleAddButton = useCallback(() => {
     const currList = { name: taskName, completed: false };
+    // setTimeout(() => setTaskName(''),0);
     setTaskName('');
     handleAddNewTask(currList);
-
   }, [taskName, handleAddNewTask]);
 
   return <Container>
@@ -41,6 +42,6 @@ const AddNewTask = props => {
       <AddIcon />
     </IconButton>
   </Container>;
-};
+});
 
 export default AddNewTask;
