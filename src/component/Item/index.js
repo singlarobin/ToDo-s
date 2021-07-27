@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import IconButton from "../IconButton";
+import styled from 'styled-components';
+import IconButton from '../IconButton';
 import DeleteIcon from '../../assets/deleteIcon';
+import React from 'react';
 
 const Container = styled.div`
     display: flex;
@@ -14,15 +15,15 @@ const Div = styled.div`
     flex-grow: 1;
 `;
 
-const Item = props => {
+const Item = React.memo(props => {
     const { index, toDoItem:{name, completed}, handleDeleteItem } = props;
 
     return <Container>
         <Div>{name}</Div>
-        <IconButton onClick={handleDeleteItem(index)}>
+        <IconButton onClick={() =>handleDeleteItem(index)}>
             <DeleteIcon/>
         </IconButton>
     </Container>;
-}
+});
 
 export default Item;
