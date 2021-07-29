@@ -28,8 +28,13 @@ const ItemNameDiv = styled.div`
     flex-grow: 1;
 `;
 
+const Checkbox = styled.input`
+    margin-right: 1rem;
+    cursor: pointer;
+`;
+
 const Item = React.memo(props => {
-    const { index, toDoItem: { name, completed }, handleEditItem, handleDeleteItem } = props;
+    const { index, toDoItem: { name, completed }, handleEditItem, handleDeleteItem, handleCompleteItem } = props;
     const [isEdit, setIsEdit] = useState(false);
     const [taskName, setTaskName] = useState('');
 
@@ -41,6 +46,7 @@ const Item = React.memo(props => {
         setIsEdit(false);
         handleEditItem(index, taskName);
     }, [index, taskName, handleEditItem]);
+    const handleCheckboxClick = useCallback(value => handleCompleteItem(index, value), [index, handleCompleteItem]);
 
     const handleInputTextChange = useCallback(e => setTaskName(e.target.value), []);
 
@@ -56,7 +62,8 @@ const Item = React.memo(props => {
                 <DoneIcon />
             </IconButton>
         </Fragment> : <Fragment>
-            <ItemNameDiv>{name}</ItemNameDiv>
+            <Checkbox type='checkbox' checked={completed} onChange={e => handleCheckboxClick(e.target.checked)} />
+            <ItemNameDiv style={{ textDecoration: completed ? 'line-through' : 'none' }}>{name}</ItemNameDiv>
             <IconButton onClick={handleEditButtonClick}>
                 <EditIcon />
             </IconButton>

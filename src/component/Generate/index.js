@@ -39,10 +39,21 @@ const Generate = () => {
         setToDoList(currList);
     }, [toDoList]);
 
+    const handleCompleteTask = useCallback((index, value) => {
+        const currList =toDoList.map((item, currIndex) => {
+            if(currIndex === index){
+                item.completed = value;
+            }
+            return item;
+        })
+        setToDoList(currList);
+    }, [toDoList]);
+
     console.log('generate:', toDoList);
     return <Div>
         <AddNewTask handleAddNewTask={handleAddNewTask} />
-        <List toDoList={toDoList} handleEditTask={handleEditTask} handleDeleteTask={handleDeleteTask} />
+        <List toDoList={toDoList} handleEditTask={handleEditTask}
+            handleDeleteTask={handleDeleteTask} handleCompleteTask={handleCompleteTask} />
     </Div>;
 
 };
