@@ -4,18 +4,19 @@ import styled from 'styled-components';
 import Input from '../input';
 import IconButton from '../IconButton';
 import AddIcon from '../../assets/addIcon';
+import { themed } from '../../resource/contants';
 
 const Container = styled.div`
     margin: 1.5rem auto;
     padding: 1rem;
     width: 70vw;
     display: flex;
-    border: 2px solid #757070;
+    border: 2px solid ${({theme}) => theme.primaryTheme};
     border-radius: 0.5rem;
     align-items: center;
 `;
 
-const AddNewTask = React.memo(props => {
+const AddNewTask = props => {
     const [taskName, setTaskName] = useState('');
     const { handleAddNewTask } = props;
 
@@ -35,9 +36,9 @@ const AddNewTask = React.memo(props => {
             style={{
                 padding: '0.5rem',
             }} >
-            <AddIcon />
+            <AddIcon strokeColor={themed('#000','#fff')}/>
         </IconButton>
     </Container>;
-});
+};
 
 export default AddNewTask;

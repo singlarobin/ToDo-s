@@ -3,6 +3,9 @@ const themes = Object.freeze({
     DARK: 'DARK',
 })
 
+const themed = (lightValue, darkValue) => localStorage.getItem('ToDoTheme') === themes.LIGHT ? lightValue : darkValue;
+
 export {
     themes,
+    themed,
 }

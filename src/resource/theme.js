@@ -3,6 +3,9 @@ const lightTheme = {
     cardContainer: '#f9f9f7',
     textColor: '#191919',
     textOpposite: '#e6e6e6',
+    primaryTheme: '#DD7F7A',
+    secondaryTheme: '#EBE8D6',
+    buttonColor: '#000',
 }
 
 const darkTheme = {
@@ -10,6 +13,9 @@ const darkTheme = {
     cardContainer: '#151515',
     textColor: '#e6e6e6',
     textOpposite: '#191919',
+    primaryTheme: '#DD7F7A',
+    secondaryTheme: '#EBE8D6',
+    buttonColor: '#fff',
 }
 
 export {

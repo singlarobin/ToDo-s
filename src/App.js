@@ -7,6 +7,7 @@ import LightModeIcon from './assets/lightModeIcon';
 import DarkModeIcon from './assets/darkModeIcon';
 import IconButton from './component/IconButton';
 import useDarkTheme from './hooks/useDarkTheme';
+// import { getTheme, setTheme, themed } from './hooks/useDarkTheme';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
@@ -21,14 +22,9 @@ const App = () => {
     const [darkMode, setDarkMode] = useState(false);
     const selectedTheme = theme === themes.LIGHT ? lightTheme : darkTheme;
 
-    useEffect(() => {
-        setDarkMode(theme === themes.LIGHT ? false : true);
-    }, [theme]);
-
-    const handleThemeChange = () => {
-        themeToggler();
-        setDarkMode(!darkMode);
-    }
+    useEffect(() => setDarkMode(theme === themes.LIGHT ? false : true), [theme]);
+    
+    const handleThemeChange = () => themeToggler();
 
     return (
         <ThemeProvider theme={selectedTheme}>
