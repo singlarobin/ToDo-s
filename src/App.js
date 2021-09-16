@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 const AppContainer = styled.div`
-	background: ${({ theme }) => theme.pageBg};
+	background: ${({ theme }) => theme.backgroundGradient};
   	height:inherit;
   	width:inherit;
 `;
