@@ -1,6 +1,6 @@
 const DarkModeIcon = props => {
 
-    const {width, height, fill, strokeColor, strokeWidth } = props;
+    const { width, height, fill, strokeColor, strokeWidth } = props;
 
     return <svg xmlns='http://www.w3.org/2000/svg' width={width} height={height} viewBox='0 0 24 24'
         strokeWidth={strokeWidth} stroke={strokeColor} fill={fill} strokeLinecap="round" strokeLinejoin="round">
@@ -17,6 +17,6 @@ DarkModeIcon.defaultProps = {
     width: '1.5rem',
     height: '1.5rem',
     fill: 'none',
-    strokeColor: '#000',
+    strokeColor: '#102F81',
     strokeWidth: '1.5',
 }

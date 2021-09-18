@@ -2,21 +2,19 @@ import { useCallback, useState } from 'react';
 import React from 'react';
 import styled from 'styled-components';
 import Input from '../input';
-import IconButton from '../IconButton';
-import AddIcon from '../../assets/addIcon';
-import { themed } from '../../resource/contants';
+import Button from '../button';
 
 const Container = styled.div`
-    margin: 1.5rem auto;
-    padding: 1rem;
-    width: 70vw;
     display: flex;
-    border: 2px solid ${({theme}) => theme.primaryTheme};
-    border-radius: 0.5rem;
+    flex-direction: column;
     align-items: center;
+
+    @media (min-width: 1024px){
+        margin: 2.5rem auto;
+    }
 `;
 
-const AddNewTask = props => {
+const AddNewTask = React.memo(props => {
     const [taskName, setTaskName] = useState('');
     const { handleAddNewTask } = props;
 
@@ -30,15 +28,10 @@ const AddNewTask = props => {
     }, [taskName, handleAddNewTask]);
 
     return <Container>
-        <Input placeholderValue={'Add New Task'} rows={'1'} inputText={taskName}
+        <Input placeholderValue={'Add New Task'} rows={'2'} inputText={taskName}
             handleChange={handleInputTextChange} style={{ flexGrow: '1' }} />
-        <IconButton onClick={handleAddButton}
-            style={{
-                padding: '0.5rem',
-            }} >
-            <AddIcon strokeColor={themed('#000','#fff')}/>
-        </IconButton>
+        <Button name={`CREATE`} handleClick={handleAddButton} />
     </Container>;
-};
+});
 
 export default AddNewTask;

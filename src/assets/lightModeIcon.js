@@ -1,7 +1,7 @@
 const LightModeIcon = props => {
 
-    const {width, height, fill, strokeColor, strokeWidth } = props;
-    
+    const { width, height, fill, strokeColor, strokeWidth } = props;
+
     return <svg xmlns='http://www.w3.org/2000/svg' width={width} height={height} viewBox='0 0 24 24'
         strokeWidth={strokeWidth} stroke={strokeColor} fill={fill} strokeLinecap='round' strokeLinejoin='round'>
         <path stroke="none" d="M0 0h24v24H0z" fill={fill} />
