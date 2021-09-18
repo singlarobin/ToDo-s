@@ -1,7 +1,7 @@
 const EditIcon = props => {
-    const { width, height, fill, strokeColor, strokeWidth } = props;
+    const { width, height, fill, strokeColor, strokeWidth, style } = props;
 
-    return <svg xmlns='http://www.w3.org/2000/svg' width={width} height={height} viewBox='0 0 24 24'
+    return <svg xmlns='http://www.w3.org/2000/svg' width={width} height={height} viewBox='0 0 24 24' style={style}
         fill={fill} stroke={strokeColor} strokeWidth={strokeWidth} strokeLinecap='round' strokeLinejoin='round'>
         <path fill={fill} stroke='none' d='M0 0h24v24H0z' />
         <path d='M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3' />
@@ -16,6 +16,6 @@ EditIcon.defaultProps = {
     width: '1.5rem',
     height: '1.5rem',
     fill: 'none',
-    strokeColor: '#000',
+    strokeColor: '#102F81',
     strokeWidth: '1.5',
 };

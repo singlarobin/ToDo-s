@@ -3,12 +3,15 @@ import React from 'react';
 
 const StyledTextArea = styled.textarea`
     font-size: 1rem;
+    color: ${({theme}) => theme.textNormal};
     padding: 0.5rem;
     resize: none;
     border: none;
     outline:none;
-    
+    background: ${({theme}) => theme.glassColor2};
+    border-radius: 0.3rem;
     ::placeholder {
+        color: ${({theme}) => theme.textNormal};
         opacity: 0.75;
     }
 `;

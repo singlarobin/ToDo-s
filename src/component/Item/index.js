@@ -5,27 +5,33 @@ import EditIcon from '../../assets/editIcon';
 import DoneIcon from '../../assets/doneIcon';
 import React, { Fragment, useCallback, useState } from 'react';
 import Input from '../input';
+import { themed } from '../../resource/contants';
+import { lightTheme, darkTheme } from '../../resource/theme';
 
 const Container = styled.div`
     display: flex;
     margin-bottom: 0.5rem;
     padding: 0.5rem;
-    background-color: #fff;
+    background: ${({ theme }) => theme.glassColor2};
+    border-radius: 0.3rem;
 `;
 
 const InputContainer = styled.div`
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex: 1;
 `;
 
 const Label = styled.div`
     font-size: 0.7rem;
+    margin-bottom: 0.2rem;
+    color: ${({ theme }) => theme.textNormal2};
 `;
 
 const ItemNameDiv = styled.div`
     font-size: 1rem;
-    flex-grow: 1;
+    flex: 1;
+    color: ${({ theme }) => theme.textNormal};
 `;
 
 const Checkbox = styled.input`
@@ -33,7 +39,7 @@ const Checkbox = styled.input`
     cursor: pointer;
 `;
 
-const Item = React.memo(props => {
+const Item = props => {
     const { index, toDoItem: { name, completed }, handleEditItem, handleDeleteItem, handleCompleteItem } = props;
     const [isEdit, setIsEdit] = useState(false);
     const [taskName, setTaskName] = useState('');
@@ -50,6 +56,8 @@ const Item = React.memo(props => {
 
     const handleInputTextChange = useCallback(e => setTaskName(e.target.value), []);
 
+    console.log('item:', themed(lightTheme.textNormal2, darkTheme.textNormal2));
+
     return <Container>
         {isEdit ? <Fragment>
             <InputContainer>
@@ -59,21 +67,20 @@ const Item = React.memo(props => {
             </InputContainer>
 
             <IconButton onClick={handleDoneButtonClick}>
-                <DoneIcon />
+                <DoneIcon strokeColor={themed(lightTheme.textNormal2, darkTheme.textNormal2)} style={{ cursor: 'pointer' }} />
             </IconButton>
         </Fragment> : <Fragment>
             <Checkbox type='checkbox' checked={completed} onChange={e => handleCheckboxClick(e.target.checked)} />
             <ItemNameDiv style={{ textDecoration: completed ? 'line-through' : 'none' }}>{name}</ItemNameDiv>
             <IconButton onClick={handleEditButtonClick}>
-                <EditIcon />
+                <EditIcon strokeColor={themed(lightTheme.textNormal2, darkTheme.textNormal2)} style={{ cursor: 'pointer' }} />
             </IconButton>
             <IconButton onClick={() => handleDeleteItem(index)}>
-                <DeleteIcon />
+                <DeleteIcon strokeColor={themed(lightTheme.textNormal2, darkTheme.textNormal2)} style={{ cursor: 'pointer' }} />
             </IconButton>
         </Fragment>}
-
-
     </Container>;
-});
+};
+
 
 export default Item;

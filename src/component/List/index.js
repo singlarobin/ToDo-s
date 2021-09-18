@@ -5,16 +5,35 @@ import { isEmptyString } from '../../utils';
 import Item from '../Item';
 
 const Div = styled.div`
-    width: 80vw;
+    width: 70vw;
+    height: 40vh;
+    overflow-y: auto;
     margin: 1rem auto;
     padding: 1rem;
+    background: ${({ theme }) => theme.glassColor1};
+    border-radius: 0.5rem;
+
+    @media (min-width: 1024px){
+        width: 35vw;
+        max-width: 500px;
+        height: 35vh;
+    }
 `;
 const EmptyDiv = styled.div`
+    height: inherit;
     font-size: 2rem;
-    text-align: center;
+    // margin: 6.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${({ theme }) => theme.textNormal};
+
+    @media (min-width: 1024px){
+        // margin: 0rem;
+    }
 `;
 
-const List = React.memo(props => {
+const List = props => {
     const { toDoList, handleEditTask, handleDeleteTask, handleCompleteTask } = props;
 
     const handleEditItem = useCallback((index, taskName) => handleEditTask(index, taskName), [handleEditTask]);
@@ -27,6 +46,6 @@ const List = React.memo(props => {
                 handleDeleteItem={handleDeleteItem} handleCompleteItem={handleCompleteItem} />
         })) : <EmptyDiv>No Task!</EmptyDiv>}
     </Div>
-});
+};
 
 export default List;

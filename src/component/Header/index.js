@@ -1,18 +1,24 @@
 import styled from "styled-components";
+import React from 'react';
+
 const Container = styled.div`
-    text-align: center;
     font-size: 4rem;
-    margin: 0rem auto;
-    padding-top: 2rem;
-    color: #757070;
+    margin: 3.5rem auto 2rem;
+    color: ${({ theme }) => theme.textHeading};
+
+    @media (min-width: 1024px){
+        margin: 2rem auto;
+    }
 `;
 
-const Header = () => {
+const Header = React.memo(() => {
     return (
         <Container>
             ToDo
         </Container>
     );
-};
+});
 
 export default Header;
+
+
