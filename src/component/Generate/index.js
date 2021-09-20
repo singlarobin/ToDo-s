@@ -17,6 +17,7 @@ const MobileView = styled.div`
     width: inherit;
     height: inherit;
     display: flex;
+    overflow-y: auto;
     flex-direction: column;
     z-index: 3;
     
@@ -99,7 +100,6 @@ const Generate = () => {
         setToDoList(currList);
     }, [toDoList]);
 
-    console.log('generate:', toDoList);
     return <Div>
         <MobileView>
             <LeftContainer>
@@ -120,7 +120,6 @@ const Generate = () => {
                     handleDeleteTask={handleDeleteTask} handleCompleteTask={handleCompleteTask} />
             </RightContainer>
         </WebView>
-
     </Div>;
 
 };
