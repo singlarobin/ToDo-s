@@ -11,6 +11,7 @@ const lightTheme = {
     glassColor2: 'rgba(255,255,255,0.5)',
     taskBackgroundColor: 'rgba(255,255,255,0.7)',
     ellipseGradient: 'linear-gradient(to top, #EED3FF, #B3C8FF)',
+    buttonShadowColor: 'rgba(255,255,255,0.8)',
 }
 
 const darkTheme = {
@@ -25,6 +26,7 @@ const darkTheme = {
     glassColor2: 'rgba(255,255,255,0.5)',
     taskBackgroundColor: 'rgba(255,255,255,0.7)',
     ellipseGradient: 'linear-gradient(to top, #2E87A3, #102F81)',
+    buttonShadowColor: 'rgba(255,255,255,0.5)',
 }
 
 export {

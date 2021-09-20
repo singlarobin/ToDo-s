@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import Generate from './component/Generate';
 import { lightTheme, darkTheme } from './resource/theme';
 import { themes } from './resource/contants';
-import LightModeIcon from './assets/lightModeIcon';
-import DarkModeIcon from './assets/darkModeIcon';
+import LightModeIcon from './assets/icons/lightModeIcon';
+import DarkModeIcon from './assets/icons/darkModeIcon';
 import IconButton from './component/IconButton';
 import useDarkTheme from './hooks/useDarkTheme';
 import { useEffect, useState } from 'react';
@@ -12,6 +12,7 @@ import Circle from './assets/shapes/circle';
 import Rectangle from './assets/shapes/rectangle';
 
 const AppContainer = styled.div`
+    position: fixed;
 	background: ${({ theme }) => theme.backgroundGradient};
   	height:inherit;
   	width:inherit;
@@ -111,7 +112,6 @@ const App = () => {
     useEffect(() => setDarkMode(theme === themes.LIGHT ? false : true), [theme]);
 
     const handleThemeChange = () => themeToggler();
-    console.log(theme);
     return (
         <ThemeProvider theme={selectedTheme}>
             <AppContainer>
@@ -133,7 +133,6 @@ const App = () => {
 
                 <EllipseContainer style={{ opacity: darkMode ? '0.5' : '1' }} />
             </AppContainer>
-
         </ThemeProvider>
 
     );

@@ -6,8 +6,6 @@ import Item from '../Item';
 
 const Div = styled.div`
     width: 70vw;
-    height: 40vh;
-    overflow-y: auto;
     margin: 1rem auto;
     padding: 1rem;
     background: ${({ theme }) => theme.glassColor1};
@@ -17,19 +15,19 @@ const Div = styled.div`
         width: 35vw;
         max-width: 500px;
         height: 35vh;
+        overflow-y: auto;
     }
 `;
 const EmptyDiv = styled.div`
-    height: inherit;
+    height:  40vh;
     font-size: 2rem;
-    // margin: 6.5rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
     color: ${({ theme }) => theme.textNormal};
 
     @media (min-width: 1024px){
-        // margin: 0rem;
+        height: inherit;
     }
 `;
 

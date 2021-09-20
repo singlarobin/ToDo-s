@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import IconButton from '../IconButton';
-import DeleteIcon from '../../assets/deleteIcon';
-import EditIcon from '../../assets/editIcon';
-import DoneIcon from '../../assets/doneIcon';
+import DeleteIcon from '../../assets/icons/deleteIcon';
+import EditIcon from '../../assets/icons/editIcon';
+import DoneIcon from '../../assets/icons/doneIcon';
 import React, { Fragment, useCallback, useState } from 'react';
 import Input from '../input';
 import { themed } from '../../resource/contants';
@@ -24,6 +24,7 @@ const InputContainer = styled.div`
 
 const Label = styled.div`
     font-size: 0.7rem;
+    margin-left: 0.5rem;
     margin-bottom: 0.2rem;
     color: ${({ theme }) => theme.textNormal2};
 `;
@@ -48,22 +49,22 @@ const Item = props => {
         setIsEdit(true);
         setTaskName(name);
     }, [name]);
+
     const handleDoneButtonClick = useCallback(() => {
         setIsEdit(false);
         handleEditItem(index, taskName);
     }, [index, taskName, handleEditItem]);
+    
     const handleCheckboxClick = useCallback(value => handleCompleteItem(index, value), [index, handleCompleteItem]);
 
     const handleInputTextChange = useCallback(e => setTaskName(e.target.value), []);
-
-    console.log('item:', themed(lightTheme.textNormal2, darkTheme.textNormal2));
 
     return <Container>
         {isEdit ? <Fragment>
             <InputContainer>
                 <Label>{'Edit Name'}</Label>
                 <Input placeholderValue={'Task Name'} rows={1} inputText={taskName}
-                    handleChange={handleInputTextChange} style={{ flexGrow: '1', padding: '0rem' }} />
+                    handleChange={handleInputTextChange} style={{ flexGrow: '1', padding: '0.25 0.5rem', margin: '0.5rem' }} />
             </InputContainer>
 
             <IconButton onClick={handleDoneButtonClick}>

@@ -9,6 +9,11 @@ const ButtonContainer = styled.button`
     border-radius: 0.2rem;
     background: ${({ theme }) => theme.glassColor1};
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+        box-shadow: 1px 2px 2px ${({theme}) => theme.butonShadowColor} inset, -1px -2px 1px ${({theme}) => theme.butonShadowColor} inset;
+    }
 `;
 
 const Button = props => {
