@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/%7Brepo-name%7D/static/css/main.22a82cba.chunk.css",
-    "main.js": "/%7Brepo-name%7D/static/js/main.bf68b566.chunk.js",
-    "main.js.map": "/%7Brepo-name%7D/static/js/main.bf68b566.chunk.js.map",
-    "runtime-main.js": "/%7Brepo-name%7D/static/js/runtime-main.74959abc.js",
-    "runtime-main.js.map": "/%7Brepo-name%7D/static/js/runtime-main.74959abc.js.map",
-    "static/js/2.439e45ad.chunk.js": "/%7Brepo-name%7D/static/js/2.439e45ad.chunk.js",
-    "static/js/2.439e45ad.chunk.js.map": "/%7Brepo-name%7D/static/js/2.439e45ad.chunk.js.map",
-    "index.html": "/%7Brepo-name%7D/index.html",
-    "static/css/main.22a82cba.chunk.css.map": "/%7Brepo-name%7D/static/css/main.22a82cba.chunk.css.map",
-    "static/js/2.439e45ad.chunk.js.LICENSE.txt": "/%7Brepo-name%7D/static/js/2.439e45ad.chunk.js.LICENSE.txt"
+    "main.css": "/ToDo-s/static/css/main.22a82cba.chunk.css",
+    "main.js": "/ToDo-s/static/js/main.bf68b566.chunk.js",
+    "main.js.map": "/ToDo-s/static/js/main.bf68b566.chunk.js.map",
+    "runtime-main.js": "/ToDo-s/static/js/runtime-main.3fbc9821.js",
+    "runtime-main.js.map": "/ToDo-s/static/js/runtime-main.3fbc9821.js.map",
+    "static/js/2.2ca164ee.chunk.js": "/ToDo-s/static/js/2.2ca164ee.chunk.js",
+    "static/js/2.2ca164ee.chunk.js.map": "/ToDo-s/static/js/2.2ca164ee.chunk.js.map",
+    "index.html": "/ToDo-s/index.html",
+    "static/css/main.22a82cba.chunk.css.map": "/ToDo-s/static/css/main.22a82cba.chunk.css.map",
+    "static/js/2.2ca164ee.chunk.js.LICENSE.txt": "/ToDo-s/static/js/2.2ca164ee.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.74959abc.js",
-    "static/js/2.439e45ad.chunk.js",
+    "static/js/runtime-main.3fbc9821.js",
+    "static/js/2.2ca164ee.chunk.js",
     "static/css/main.22a82cba.chunk.css",
     "static/js/main.bf68b566.chunk.js"
   ]
