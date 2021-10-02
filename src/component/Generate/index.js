@@ -39,6 +39,8 @@ const WebView = styled.div`
         border-radius: 2rem;
         z-index: 3;
         backdrop-filter: blur(1rem);
+        opacity: 1;
+        transition: opacity ${({ theme }) => theme.transitionDuration}, background ${({ theme }) => theme.transitionDuration};
     }
 `;
 
@@ -51,6 +53,8 @@ const LeftContainer = styled.div`
         background: ${({ theme }) => theme.glassColor1};
         border-top-left-radius: 2rem;
         border-bottom-left-radius: 2rem;
+        opacity: 1;
+        transition: opacity ${({ theme }) => theme.transitionDuration}, background ${({ theme }) => theme.transitionDuration};
     }
 `;
 

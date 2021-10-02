@@ -9,7 +9,6 @@ const useDarkTheme = () => {
         if (!isEmptyString(localStorage.getItem('ToDoTheme'))) {
             setTheme(localStorage.getItem('ToDoTheme'));
         }
-        
     }, []);
 
     useEffect(() => localStorage.setItem('ToDoTheme', theme === themes.LIGHT ? themes.LIGHT : themes.DARK), [theme]);
