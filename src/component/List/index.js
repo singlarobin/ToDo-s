@@ -10,6 +10,8 @@ const Div = styled.div`
     padding: 1rem;
     background: ${({ theme }) => theme.glassColor1};
     border-radius: 0.5rem;
+    opacity: 1;
+    transition: opacity ${({ theme }) => theme.transitionDuration}, background ${({ theme }) => theme.transitionDuration};
 
     @media (min-width: 1024px){
         width: 35vw;
@@ -25,6 +27,7 @@ const EmptyDiv = styled.div`
     justify-content: center;
     align-items: center;
     color: ${({ theme }) => theme.textNormal};
+    transition: color ${({ theme }) => theme.transitionDuration};
 
     @media (min-width: 1024px){
         height: inherit;

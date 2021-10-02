@@ -3,7 +3,8 @@ const LightModeIcon = props => {
     const { width, height, fill, strokeColor, strokeWidth } = props;
 
     return <svg xmlns='http://www.w3.org/2000/svg' width={width} height={height} viewBox='0 0 24 24'
-        strokeWidth={strokeWidth} stroke={strokeColor} fill={fill} strokeLinecap='round' strokeLinejoin='round'>
+        strokeWidth={strokeWidth} stroke={strokeColor} fill={fill} strokeLinecap='round'
+        strokeLinejoin='round' style={{ transition: 'stroke 0.25s' }}>
         <path stroke="none" d="M0 0h24v24H0z" fill={fill} />
         <circle cx="12" cy="12" r="3" />
         <line x1="12" y1="5" x2="12" y2="3" />

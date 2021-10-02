@@ -17,6 +17,8 @@ const AppContainer = styled.div`
   	height:inherit;
   	width:inherit;
     overflow: inherit;
+    opacity: 1;
+    transition: opacity ${({ theme }) => theme.transitionDuration} ,background ${({ theme }) => theme.transitionDuration};
 `;
 
 const CircleContainer = styled.div`
@@ -83,6 +85,8 @@ const EllipseContainer = styled.div`
     background: ${({ theme }) => theme.ellipseGradient};
     border-radius: 50%;
     filter: blur(1rem);
+    opacity: 1;
+    transition: opacity ${({ theme }) => theme.transitionDuration} ,background ${({ theme }) => theme.transitionDuration};
 
     @media (min-width: 480px){
         right: -30%;
@@ -123,15 +127,25 @@ const App = () => {
 
                 <CircleContainer>
                     <Circle fill={darkMode ? darkTheme.accentColor3 : lightTheme.accentColor3}
-                        style={{ height: 'inherit', width: 'inherit' }} />
+                        style={{
+                            height: 'inherit',
+                            width: 'inherit',
+                        }} />
                 </CircleContainer>
 
                 <RectangleContainer>
                     <Rectangle fill={darkMode ? darkTheme.accentColor1 : lightTheme.accentColor1}
-                        style={{ height: 'inherit', width: 'inherit' }} />
+                        style={{
+                            height: 'inherit',
+                            width: 'inherit',
+                        }} />
                 </RectangleContainer>
 
-                <EllipseContainer style={{ opacity: darkMode ? '0.5' : '1' }} />
+                <EllipseContainer
+                    style={{
+                        opacity: darkMode ? '0.5' : '1',
+                        transition: 'opacity 0.5s'
+                    }} />
             </AppContainer>
         </ThemeProvider>
 

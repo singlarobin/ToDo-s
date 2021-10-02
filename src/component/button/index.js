@@ -9,10 +9,12 @@ const ButtonContainer = styled.button`
     border-radius: 0.2rem;
     background: ${({ theme }) => theme.glassColor1};
     cursor: pointer;
+    transition: color ${({ theme }) => theme.transitionDuration}, background ${({ theme }) => theme.transitionDuration};
 
     &:hover,
     &:focus {
-        box-shadow: 1px 2px 2px ${({theme}) => theme.butonShadowColor} inset, -1px -2px 1px ${({theme}) => theme.butonShadowColor} inset;
+        box-shadow: 1px 2px 2px ${({ theme }) => theme.butonShadowColor} inset, -1px -2px 1px ${({ theme }) => theme.butonShadowColor} inset;
+        transition: box-shadow ${({ theme }) => theme.transitionDuration};
     }
 `;
 
